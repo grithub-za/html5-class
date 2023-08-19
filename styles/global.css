@@ -1,0 +1,32 @@
+/* styles that are used on 100% of the pages */
+
+
+@font-face{
+    font-family: "Montserrat";
+    src: url("/assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+000-5FF;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+    color: #777;
+    background-color: #f1f5f8;
+}
+
+.header{
+    background-color: #fff;
+}
