@@ -89,7 +89,8 @@ body{
 }
 
 .logo span{
-    color: #bbb
+    color: #bbb;
+    font-weight: lighter;
 }
 
 
