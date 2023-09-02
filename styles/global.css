@@ -1,10 +1,26 @@
 /* styles that are used on 100% of the pages */
 
+:root {
+    --star-size: 20px;
+    --star-color: #fff;
+    --star-background: #fc0;
+}
+
 
 @font-face{
     font-family: "Montserrat";
-    src: url("/assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+    src: url("/assets/fonts/static/Montserrat-Regular.ttf") format("truetype");
     font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+000-5FF;
+}
+
+@font-face{
+    font-family: "Montserrat-Bold";
+    src: url("/assets/fonts/static/Montserrat-SemiBold.ttf") format("truetype");
+    font-weight: 800;
 	font-style: normal;
 	font-stretch: normal;
 	font-display: swap;
@@ -29,21 +45,24 @@ body{
 
 /* header */
 .header{
-    padding: 2rem  2dvw;
+    padding: 2rem 0;
     border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
+    width: 100%;
 }
 
 .headerItem{
     display: flex;
     width: 33.3%;
+    padding-left: 2vw;
 }
 
 .headerItem--last{
     justify-content: flex-end;
+    padding: 0 2vw 0 0;
 }
 
 .headerItem_list{
@@ -70,7 +89,7 @@ body{
 }
 
 .search_control{
-    padding: .5rem 1rem;
+    padding: 1rem;
     border: none;
     font-size: 1.4rem;
     background-color: transparent;
@@ -81,23 +100,44 @@ body{
 .logo{
     text-decoration: none;
     color: #222;
-    font-size: 2rem;
+    font-size: 2.1rem;
     width: 33.3%;
     display: flex;
     text-align: center;
     justify-content: center;
+    font-weight: 800;
+    font-family: "Montserrat-Bold"
 }
 
 .logo span{
-    color: #bbb;
+    color: #aaa;
     font-weight: lighter;
+    font-family: "Montserrat";
 }
 
 
 /* my account */
-.myAccount_avatar{
-    border-radius: 50%;
+.myaccount{
+    position: relative;
+    display: block;
 }
+
+.myAccount_avatar{
+    border-radius: 50%;  
+}
+
+.badge{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #e74c3c;
+    z-index: 1;
+    right: -2px;
+    top: -2px;
+}
+
+
 
 /* menu navigation */
 .menu{
@@ -109,14 +149,14 @@ body{
     padding: 0 .5rem 0 2rem;
     margin-left: 2rem;
     border-left: 1px solid #ccc;
-    color: #aaa
+    color: #777
 }
 
 .menu_icon{
     width: 20px;
     height: 20px;
     margin-right: 1rem;
-    fill: #aaa;
+    fill: #777;
 }
 
 /* browse by */
@@ -166,6 +206,7 @@ body{
     box-shadow: 4px 4px 11px 0 rgba(0,0,0,.2);
     background-color: #fff;
     display: none;
+    z-index: 10;
 }
 
 .browseBy_navList{
@@ -187,12 +228,16 @@ body{
 }
 
 .browseBy_navLink{
-    padding: .5rem 2rem;
+    padding: 1rem 2rem;
     display: block;
     font-size: 1.4rem;
     text-decoration: none;
     color: #777;
 }
+
+
+
+
 
 .main{
     padding: 0 2dvw;

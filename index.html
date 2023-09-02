@@ -28,6 +28,9 @@
         <!-- styles -->
         <link href="/styles/reset.css" rel="stylesheet" />
         <link href="/styles/global.css" rel="stylesheet" />
+        <link href="/styles/home.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.css"/>
 
         <!-- Scripts -->
         <script type="application/ld+json">
@@ -120,7 +123,8 @@
 
             <div class="headerItem headerItem--last">
                 <a href="" class="myaccount" title="my account">
-                    <img src="https://dummyimage.com/30x30/ccc/fff" class="myAccount_avatar" />
+                    <div class="badge"></div>
+                    <img width="50" height="50" src="/assets/300-1.jpg" class="myAccount_avatar" />
                 </a>
 
                 <button type="button" class="menu">
@@ -135,14 +139,145 @@
         </header>
 
 
+        <section class="bookSlider keen-slider" id="my-keen-slider">
+            <button id="left" class="bookSlider__arrow">
+                <svg id="icon-navigate_next" viewBox="0 0 24 24">
+                    <path d="M15.422 7.406l-4.594 4.594 4.594 4.594-1.406 1.406-6-6 6-6z"></path>
+                </svg>
+            </button>
+
+
+            <article class="book__article orange__article keen-slider__slide">
+                <figure class="book__coverCntr">
+                    <a href="" title="read more about this book">
+                        <img width="250" height="400" src="/assets/Book-Review-The-Martian.jpg" alt="book cover" class="book__cover" />
+                    </a>
+                </figure>
+                
+                <div class="book__meta">
+                    <h2 class="book__title">
+                        The Martian
+                    </h2>
+                    <cite class="book__author">
+                        by Andy Weir
+                    </cite>
+
+                    <div class="stars" style="--rating: 3.5"></div>
+
+                    <p class="book__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In assumenda accusantium harum qui! Nesciunt eveniet vitae corrupti soluta illum,
+                    </p>
+
+                    <p>
+                        <a href="" title="read more" class="button">
+                            See The Book
+                        </a>
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="book__article pink__article keen-slider__slide">
+                <figure class="book__coverCntr">
+                    <a href="" title="read more about this book">
+                        <img width="250" height="400" src="/assets/1_9Vo-QIhIiBZicd56Qba9hw.jpg" alt="book cover" class="book__cover" />
+                    </a>
+                </figure>
+                
+                <div class="book__meta">
+                    <h2 class="book__title">
+                        Big Magic
+                    </h2>
+                    <cite class="book__author">
+                        by Elizabeth Gilbert
+                    </cite>
+
+                    <div class="stars" style="--rating: 3.5"></div>
+
+                    <p class="book__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In assumenda accusantium harum qui! Nesciunt eveniet vitae corrupti soluta illum,
+                    </p>
+
+                    <p>
+                        <a href="" title="read more" class="button">
+                            See The Book
+                        </a>
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="book__article blue__article keen-slider__slide">
+                <figure class="book__coverCntr">
+                    <a href="" title="read more about this book">
+                        <img width="250" height="400" src="/assets/51Xje8kyL+L.jpg" alt="book cover" class="book__cover" />
+                    </a>
+                </figure>
+                
+                <div class="book__meta">
+                    <h2 class="book__title">
+                        Ten Thousand Skies
+                    </h2>
+                    <cite class="book__author">
+                        by Claudia Gray
+                    </cite>
+
+                    <div class="stars" style="--rating: 3.5"></div>
+
+                    <p class="book__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In assumenda accusantium harum qui! Nesciunt eveniet vitae corrupti soluta illum,
+                    </p>
+
+                    <p>
+                        <a href="" title="read more" class="button">
+                            See The Book
+                        </a>
+                    </p>
+                </div>
+            </article>
+
+
+            <button id="right" class="bookSlider__arrow bookSlider__arrowRight">
+                <svg id="icon-navigate_next" viewBox="0 0 24 24">
+                    <path d="M9.984 6l6 6-6 6-1.406-1.406 4.594-4.594-4.594-4.594z"></path>
+                </svg>
+            </button>
+        </section>
 
 
 
         <main class="main">
+            
         </main>
+
+
+
 
         <footer class="footer">
         </footer>
-    </body>
+    
 
+
+        <script src="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.js"></script>
+
+        <script>
+            const slider = new KeenSlider("#my-keen-slider", {
+                loop: true,
+                initial: 2,
+                slides: {
+                    origin: "center",
+                    perView: 2.5,
+                    spacing: 1,
+                },
+            })
+
+            document.querySelector("#left").addEventListener("click", () => {
+                slider.prev()
+            })
+
+            document.querySelector("#right").addEventListener("click", () => {
+                slider.next()
+            })
+        </script>
+    </body>
 </html>
